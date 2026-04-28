@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 export interface HeroSectionProps {
   /** The main title, supports ReactNode for passing highlights like <span> */
