@@ -1,120 +1,118 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import { Header } from './components/common/Header/Header'
+import { HeroSection } from './components/common/HeroSection/HeroSection'
+import { PortfolioSection } from './components/features/PortfolioSection/PortfolioSection'
+import { ServicesSection } from './components/features/ServicesSection/ServicesSection'
+import { AboutSection } from './components/features/AboutSection/AboutSection'
+import { Footer } from './components/common/Footer/Footer'
+import type { Project } from './components/features/PortfolioSection/PortfolioSection.types'
+import type { Service } from './components/features/ServicesSection/ServicesSection.types'
+import { getCloudinaryUrl } from './utils/cloudinary'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+// ==========================================
+// 1. DATOS DEL PORTFOLIO
+// ==========================================
+const portfolioProjects: Project[] = [
+  {
+    id: '1',
+    title: 'TechCorp Studio',
+    category: 'Identidad Visual',
+    // TODO: Reemplaza la URL del placeholder con el ID de tu imagen en Cloudinary (ej: 'proyectos/techcorp')
+    imageUrl: getCloudinaryUrl('https://res.cloudinary.com/dirc7jd9e/image/upload/v1777341042/MON_COMUNICACION_4_rceyw1.jpg')
+  },
+  {
+    id: '2',
+    title: 'Aurora Beauty',
+    category: 'Packaging',
+    imageUrl: getCloudinaryUrl('https://res.cloudinary.com/dirc7jd9e/image/upload/v1777341042/MON_COMUNICACION_3_ppd130.jpg')
+  },
+  {
+    id: '3',
+    title: 'Verde & Co.',
+    category: 'Web Design',
+    imageUrl: getCloudinaryUrl('https://res.cloudinary.com/dirc7jd9e/image/upload/v1777341043/MON_COMUNICACION_11_rnfjml.jpg')
+  },
+  {
+    id: '4',
+    title: 'Nexus Fintech',
+    category: 'UI/UX Design',
+    imageUrl: getCloudinaryUrl('https://res.cloudinary.com/dirc7jd9e/image/upload/v1777341041/PAO_30_flrltz.jpg')
+  },
+  {
+    id: '5',
+    title: 'Aura Arquitectura',
+    category: 'Branding',
+    imageUrl: getCloudinaryUrl('https://res.cloudinary.com/dirc7jd9e/image/upload/v1777341041/PAO_35_hk7fjw.jpg')
+  },
+];
 
+// ==========================================
+// 2. DATOS DE SERVICIOS
+// ==========================================
+const servicesData: Service[] = [
+  {
+    id: '1',
+    title: 'Identidad y Branding',
+    description: 'Creamos sistemas visuales memorables que conectan con tu audiencia y transmiten la esencia real de tu marca en cada punto de contacto.',
+    features: ['Diseño de Logotipo', 'Manuales de Marca', 'Papelería Corporativa', 'Dirección de Arte'],
+    // TODO: Reemplaza la URL del placeholder con el ID de tu imagen en Cloudinary
+    imageUrl: getCloudinaryUrl('https://res.cloudinary.com/dirc7jd9e/image/upload/v1777341043/MON_COMUNICACION_2_puoyf6.jpg'),
+    reverseLayout: false,
+  },
+  {
+    id: '2',
+    title: 'Contenido para Redes',
+    description: 'Estrategias de comunicación digital orientadas a construir comunidad y aumentar la visibilidad de tu negocio de forma orgánica y auténtica.',
+    features: ['Estrategia de Contenidos', 'Diseño de Feed', 'Reels y Videos Cortos', 'Copywriting Persuasivo'],
+    // TODO: Reemplaza la URL del placeholder con el ID de tu imagen en Cloudinary
+    imageUrl: getCloudinaryUrl('https://res.cloudinary.com/dirc7jd9e/image/upload/v1777341040/MON_COMUNICACION_70_1_ojh4fe.jpg'),
+    reverseLayout: true,
+  }
+];
+
+// ==========================================
+// 3. DATOS DEL ESTUDIO (NOSOTROS)
+// ==========================================
+const aboutData = {
+  eyebrow: 'EL ESTUDIO',
+  title: 'Creamos marcas con alma',
+  description: 'Nos especializamos en construir identidades visuales que conectan y perduran. Detrás de cada marca hay un equipo apasionado por el diseño, la estrategia y el impacto digital.',
+  // TODO: Reemplaza la URL del placeholder con el ID de la foto de tu equipo en Cloudinary
+  imageUrl: getCloudinaryUrl('https://res.cloudinary.com/dirc7jd9e/image/upload/v1777341043/MON_COMUNICACION_24_j1tkos.jpg')
+};
+
+function App() {
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      <Header />
+      <main>
+        <HeroSection
+          title={
+            <>
+              Diseño premium para <br />
+              marcas <span className="hero__highlight">inolvidables</span>
+            </>
+          }
+          description="Somos un estudio especializado en estrategia de marca, identidad visual y experiencias digitales que elevan el valor de tu negocio."
+          primaryCtaText="Inicia tu proyecto"
+          secondaryCtaText="Explorar portfolio"
+          // TODO: Reemplaza la URL del placeholder con el ID de la foto de tu Hero en Cloudinary
+          imageSrc={getCloudinaryUrl('https://res.cloudinary.com/dirc7jd9e/image/upload/v1777341042/MON_COMUNICACION_30_ctgp77.jpg')}
+        />
 
-      <div className="ticks"></div>
+        <PortfolioSection projects={portfolioProjects} />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        <ServicesSection services={servicesData} />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+        <AboutSection
+          eyebrow={aboutData.eyebrow}
+          title={aboutData.title}
+          description={aboutData.description}
+          imageUrl={aboutData.imageUrl}
+        />
+      </main>
+
+      <Footer />
     </>
   )
 }

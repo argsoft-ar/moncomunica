@@ -1,0 +1,208 @@
+/* ==========================================================================
+   Footer Component Styles (Pure CSS, BEM)
+   ========================================================================== */
+
+.footer {
+  background-color: var(--color-text-primary); /* Marrón oscuro como lienzo */
+  color: var(--color-text-inverse); /* Crema */
+  padding: var(--spacing-3xl) 0 var(--spacing-xl) 0;
+  width: 100%;
+}
+
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Top Section: CTA --- */
+.footer__cta-section {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__cta-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-inverse);
+  margin: 0 0 var(--spacing-lg) 0;
+  line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+  .footer__cta-title {
+    font-size: var(--font-size-5xl); /* Huge size on desktop */
+  }
+}
+
+.footer__cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--border-radius-full);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), color var(--transition-fast);
+}
+
+.footer__cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  color: var(--color-text-inverse); /* Prevent global a:hover override */
+}
+
+/* --- Divider --- */
+.footer__divider {
+  width: 100%;
+  border: none;
+  /* Utilizando color-mix para crear la línea sutil sin hardcodear RGBA */
+  border-top: 1px solid color-mix(in srgb, var(--color-bg-primary) 10%, transparent);
+  margin: 0 0 var(--spacing-3xl) 0;
+}
+
+/* --- Middle Section: Info Grid --- */
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-2xl);
+  margin-bottom: var(--spacing-3xl);
+  text-align: center; /* Centered on mobile */
+}
+
+@media (min-width: 768px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    text-align: left; /* Left aligned on tablet/desktop */
+  }
+  
+  /* Brand column spans full width on tablet to sit nicely above links */
+  .footer__col--brand {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer__grid {
+    /* Desktop: 3 columns, brand takes more space */
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+  
+  .footer__col--brand {
+    grid-column: span 1;
+  }
+}
+
+/* --- Grid Columns --- */
+.footer__col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__logo {
+  height: 80px; /* Tamaño aumentado */
+  width: auto;
+  margin-bottom: var(--spacing-md);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .footer__logo {
+    margin-left: 0;
+  }
+}
+
+.footer__description {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  color: var(--color-text-inverse);
+  opacity: 0.8;
+  margin: 0;
+}
+
+.footer__col-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-inverse);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.footer__link {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  color: var(--color-text-inverse);
+  text-decoration: none;
+  opacity: 0.6; /* Menor opacidad inicial para un hover más dramático */
+  transition: opacity var(--transition-fast);
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .footer__link {
+    margin: 0; /* Un-center on tablet/desktop */
+  }
+}
+
+.footer__link:hover {
+  color: var(--color-text-inverse); /* Mantiene el crema puro */
+  opacity: 1; /* Sube al 100% de brillo */
+}
+
+/* Animated Underline Effect */
+.footer__link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--color-text-inverse); /* Subrayado color crema */
+  transition: width var(--transition-fast);
+}
+
+.footer__link:hover::after {
+  width: 100%;
+}
+
+/* --- Bottom Section: Copyright --- */
+.footer__bottom {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer__bottom {
+    text-align: left;
+  }
+}
+
+.footer__copyright {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-inverse);
+  opacity: 0.5;
+  margin: 0;
+}

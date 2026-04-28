@@ -1,0 +1,145 @@
+/* ==========================================================================
+   ServicesSection Component Styles (Pure CSS, BEM)
+   ========================================================================== */
+
+.services {
+  background-color: var(--color-bg-primary);
+  padding: var(--spacing-3xl) 0;
+  width: 100%;
+}
+
+.services__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+}
+
+.services__header {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.services__title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .services__title {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+/* --- Service Rows Container --- */
+.services__list-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3xl);
+}
+
+/* --- Single Service Row --- */
+.services__row {
+  display: flex;
+  flex-direction: column; /* Mobile first: always stack vertically */
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+/* Tablet & Desktop: Switch to row layout and apply reverse logic */
+@media (min-width: 768px) {
+  .services__row {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--spacing-3xl);
+  }
+  
+  .services__row--reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+/* --- Service Content (Left or Right) --- */
+.services__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.services__service-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-md) 0;
+  line-height: 1.2;
+}
+
+.services__service-description {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  opacity: 0.9;
+  margin: 0 0 var(--spacing-lg) 0;
+  line-height: 1.6;
+}
+
+/* --- Features List --- */
+.services__features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.services__feature-item {
+  position: relative;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  padding-left: var(--spacing-lg); /* Space for the bullet */
+}
+
+/* Custom Burgundy Bullet Point */
+.services__feature-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px; /* Alignment with text baseline */
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-accent-primary);
+  border-radius: var(--border-radius-full);
+}
+
+/* --- Service Visual --- */
+.services__visual {
+  flex: 1;
+  width: 100%;
+  position: relative;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background-color: color-mix(in srgb, var(--color-bg-primary) 15%, transparent);
+}
+
+/* Image aspect ratio handling to reduce height on mobile */
+.services__image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3; /* More rectangular on mobile to save vertical space */
+  object-fit: cover;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .services__image {
+    aspect-ratio: 1 / 1; /* Squarish on desktop for perfect 50/50 balance */
+  }
+}
