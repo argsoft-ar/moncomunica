@@ -43,7 +43,7 @@
 
 .hero__title {
   font-family: var(--font-family-heading);
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-3xl); /* Petición del cliente: tamaño más pequeño */
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
   margin-bottom: var(--spacing-md);
@@ -52,7 +52,7 @@
 
 @media (min-width: 768px) {
   .hero__title {
-    font-size: var(--font-size-5xl);
+    font-size: var(--font-size-4xl); /* Petición del cliente: tamaño más pequeño */
   }
 }
 

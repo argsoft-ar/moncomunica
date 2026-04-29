@@ -52,7 +52,7 @@ const portfolioProjects: Project[] = [
 const servicesData: Service[] = [
   {
     id: '1',
-    title: 'Identidad y Branding',
+    title: 'Branding | Diseño Gráfico',
     description: 'Creamos sistemas visuales memorables que conectan con tu audiencia y transmiten la esencia real de tu marca en cada punto de contacto.',
     features: ['Diseño de Logotipo', 'Manuales de Marca', 'Papelería Corporativa', 'Dirección de Arte'],
     // TODO: Reemplaza la URL del placeholder con el ID de tu imagen en Cloudinary
@@ -61,7 +61,7 @@ const servicesData: Service[] = [
   },
   {
     id: '2',
-    title: 'Contenido para Redes',
+    title: 'Gestión de Redes Sociales',
     description: 'Estrategias de comunicación digital orientadas a construir comunidad y aumentar la visibilidad de tu negocio de forma orgánica y auténtica.',
     features: ['Estrategia de Contenidos', 'Diseño de Feed', 'Reels y Videos Cortos', 'Copywriting Persuasivo'],
     // TODO: Reemplaza la URL del placeholder con el ID de tu imagen en Cloudinary
@@ -89,13 +89,13 @@ function App() {
         <HeroSection
           title={
             <>
-              Diseño premium para <br />
-              marcas <span className="hero__highlight">inolvidables</span>
+              Creamos marcas que <br />
+              <span className="hero__highlight">conectan</span>
             </>
           }
           description="Somos un estudio especializado en estrategia de marca, identidad visual y experiencias digitales que elevan el valor de tu negocio."
-          primaryCtaText="Inicia tu proyecto"
-          secondaryCtaText="Explorar portfolio"
+          primaryCtaText="Contáctanos"
+          secondaryCtaText="Ver portfolio"
           // TODO: Reemplaza la URL del placeholder con el ID de la foto de tu Hero en Cloudinary
           imageSrc={getCloudinaryUrl('https://res.cloudinary.com/dirc7jd9e/image/upload/v1777341042/MON_COMUNICACION_30_ctgp77.jpg')}
         />

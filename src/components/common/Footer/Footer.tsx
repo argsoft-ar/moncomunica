@@ -7,10 +7,33 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
     <footer className={`footer ${className}`.trim()}>
       <div className="footer__container">
 
-        {/* Top Section: Giant CTA */}
-        <div className="footer__cta-section">
-          <h2 className="footer__cta-title">¿Hagamos algo increíble?</h2>
-          <a href="#contacto" className="footer__cta-button">Contáctanos</a>
+        {/* Top Section: High-End Contact Form */}
+        <div className="footer__contact-grid">
+          {/* Left Column: Text */}
+          <div className="footer__contact-text">
+            <h2 className="footer__contact-title">Escríbenos</h2>
+            <p className="footer__contact-description">
+              Hablemos sobre tu marca, tus objetivos y cómo podemos trabajar juntos para llevarlos al siguiente nivel.
+            </p>
+          </div>
+
+          {/* Right Column: Form */}
+          <div className="footer__contact-form-wrapper">
+            <form className="footer__form" onSubmit={(e) => e.preventDefault()}>
+              <div className="footer__form-group">
+                <input type="text" className="footer__input" placeholder="Nombre completo" required />
+              </div>
+              <div className="footer__form-group">
+                <input type="text" className="footer__input" placeholder="Motivo de tu consulta" required />
+              </div>
+              <div className="footer__form-group">
+                <textarea className="footer__input footer__textarea" placeholder="Cuéntanos más sobre tu proyecto..." required rows={3}></textarea>
+              </div>
+              <div className="footer__form-submit-wrapper">
+                <button type="submit" className="footer__submit">Enviar Mensaje</button>
+              </div>
+            </form>
+          </div>
         </div>
 
         <hr className="footer__divider" />

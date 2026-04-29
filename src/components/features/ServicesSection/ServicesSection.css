@@ -15,7 +15,7 @@
 }
 
 .services__header {
-  text-align: center;
+  text-align: left;
   margin-bottom: var(--spacing-3xl);
 }
 
