@@ -43,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
           {/* Column 1: Brand */}
           <div className="footer__col footer__col--brand">
             <img
-              src="/images/logo3-blanco.png"
+              src="/images/logo2-blanco.svg"
               alt="Moncomunica Estudio"
               className="footer__logo"
               loading="lazy"

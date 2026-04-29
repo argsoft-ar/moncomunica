@@ -61,12 +61,21 @@ const servicesData: Service[] = [
   },
   {
     id: '2',
+    title: 'Producción de Fotografía y Video',
+    description: 'Capturamos la esencia de tu marca a través de contenido visual premium, diseñado para captar la atención y contar la historia real detrás de tus productos.',
+    features: ['Fotografía de Producto', 'Estilismo y Dirección de Arte', 'Cobertura de Eventos', 'Video Promocional'],
+    // TODO: Reemplaza la URL del placeholder con el ID de tu imagen en Cloudinary
+    imageUrl: getCloudinaryUrl('https://res.cloudinary.com/dirc7jd9e/image/upload/v1777341041/PAO_31_1_qgjdzh.jpg'),
+    reverseLayout: true,
+  },
+  {
+    id: '3',
     title: 'Gestión de Redes Sociales',
     description: 'Estrategias de comunicación digital orientadas a construir comunidad y aumentar la visibilidad de tu negocio de forma orgánica y auténtica.',
     features: ['Estrategia de Contenidos', 'Diseño de Feed', 'Reels y Videos Cortos', 'Copywriting Persuasivo'],
     // TODO: Reemplaza la URL del placeholder con el ID de tu imagen en Cloudinary
     imageUrl: getCloudinaryUrl('https://res.cloudinary.com/dirc7jd9e/image/upload/v1777341040/MON_COMUNICACION_70_1_ojh4fe.jpg'),
-    reverseLayout: true,
+    reverseLayout: false, /* Pasa a false para mantener el ritmo alternado: Izquierda, Derecha, Izquierda */
   }
 ];
 
