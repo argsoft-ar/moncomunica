@@ -18,8 +18,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <h1 className="hero__title">{title}</h1>
           <p className="hero__description">{description}</p>
           <div className="hero__actions">
-            <button className="hero__btn hero__btn--primary">{primaryCtaText}</button>
-            <button className="hero__btn hero__btn--secondary">{secondaryCtaText}</button>
+            <a href="#contacto" className="hero__btn hero__btn--primary">{primaryCtaText}</a>
+            <a href="#portfolio" className="hero__btn hero__btn--secondary">{secondaryCtaText}</a>
           </div>
         </div>
 

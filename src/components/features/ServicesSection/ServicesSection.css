@@ -21,7 +21,7 @@
 
 .services__title {
   font-family: var(--font-family-heading);
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-2xl); /* Ajustado para móvil */
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
   margin: 0;
@@ -72,11 +72,17 @@
 
 .services__service-title {
   font-family: var(--font-family-heading);
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-2xl); /* Ajustado para móvil */
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
   margin: 0 0 var(--spacing-md) 0;
   line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .services__service-title {
+    font-size: var(--font-size-3xl);
+  }
 }
 
 .services__service-description {

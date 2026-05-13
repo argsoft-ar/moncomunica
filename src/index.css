@@ -43,7 +43,7 @@
   --color-bg-tertiary: #D98A8B; /* Rose */
   
   --color-text-primary: #5B4938; /* Brown */
-  --color-text-secondary: rgba(91, 73, 56, 0.7); /* Brown 70% */
+  --color-text-secondary: rgba(91, 73, 56, 0.85); /* Brown 85% para mejor contraste */
   --color-text-inverse: #F4F2E8;
   
   --color-accent-primary: #8D3431; /* Burgundy / Deep Red */
@@ -101,6 +101,14 @@
    ========================================================================== */
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id], footer[id] {
+  scroll-margin-top: 80px; /* Ajuste para el sticky header */
 }
 
 body {

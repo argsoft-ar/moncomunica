@@ -9,10 +9,17 @@ export const CLOUDINARY_CLOUD_NAME = 'dirc7jd9e';
 export const getCloudinaryUrl = (imageId: string): string => {
   if (!imageId) return '';
   
-  // Si la imagen ya es una URL completa (ej. placeholder actual), devuélvela como está.
-  // Esto evita romper la página web antes de que subas tus fotos reales.
+  // Si la URL ya incluye f_auto,q_auto, devolverla como está
+  if (imageId.includes('f_auto') && imageId.includes('q_auto')) return imageId;
+
+  // Si es una URL de Cloudinary cruda, le inyectamos los parámetros de optimización
+  if (imageId.includes('res.cloudinary.com')) {
+    return imageId.replace('/upload/', '/upload/f_auto,q_auto/');
+  }
+
+  // Si es otra URL externa (como placeholders de placehold.co), devolverla intacta
   if (imageId.startsWith('http')) return imageId;
   
-  // Genera la URL optimizada para el ID proporcionado
+  // Genera la URL optimizada para IDs proporcionados
   return `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,q_auto/${imageId}`;
 };

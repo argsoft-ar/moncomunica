@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Footer.css';
 import type { FooterProps } from './Footer.types';
 
 export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
+  const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus('loading');
+    
+    // Simular un envío asíncrono
+    setTimeout(() => {
+      setFormStatus('success');
+      // Limpiar y volver a estado inicial después de un tiempo
+      setTimeout(() => setFormStatus('idle'), 3000);
+    }, 1500);
+  };
   return (
     <footer className={`footer ${className}`.trim()}>
       <div className="footer__container">
@@ -19,18 +32,24 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
 
           {/* Right Column: Form */}
           <div className="footer__contact-form-wrapper">
-            <form className="footer__form" onSubmit={(e) => e.preventDefault()}>
+            <form className="footer__form" onSubmit={handleSubmit}>
               <div className="footer__form-group">
-                <input type="text" className="footer__input" placeholder="Nombre completo" required />
+                <input type="text" className="footer__input" placeholder="Nombre completo" aria-label="Nombre completo" required />
               </div>
               <div className="footer__form-group">
-                <input type="text" className="footer__input" placeholder="Motivo de tu consulta" required />
+                <input type="text" className="footer__input" placeholder="Motivo de tu consulta" aria-label="Motivo de tu consulta" required />
               </div>
               <div className="footer__form-group">
-                <textarea className="footer__input footer__textarea" placeholder="Cuéntanos más sobre tu proyecto..." required rows={3}></textarea>
+                <textarea className="footer__input footer__textarea" placeholder="Cuéntanos más sobre tu proyecto..." aria-label="Cuéntanos más sobre tu proyecto" required rows={3}></textarea>
               </div>
               <div className="footer__form-submit-wrapper">
-                <button type="submit" className="footer__submit">Enviar Mensaje</button>
+                <button 
+                  type="submit" 
+                  className={`footer__submit ${formStatus === 'success' ? 'footer__submit--success' : ''} ${formStatus === 'loading' ? 'footer__submit--loading' : ''}`.trim()}
+                  disabled={formStatus === 'loading' || formStatus === 'success'}
+                >
+                  {formStatus === 'loading' ? 'Enviando...' : formStatus === 'success' ? '¡Enviado!' : 'Enviar Mensaje'}
+                </button>
               </div>
             </form>
           </div>
