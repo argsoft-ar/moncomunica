@@ -21,8 +21,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <h1 className="hero__title">{title}</h1>
           <p className="hero__description">{description}</p>
           <div className="hero__actions">
-            <a href="#contacto" className="hero__btn hero__btn--primary">{primaryCtaText}</a>
-            <a href="#portfolio" className="hero__btn hero__btn--secondary">{secondaryCtaText}</a>
+            <a href="#portfolio" className="hero__btn hero__btn--primary">{secondaryCtaText}</a>
+            <a href="#contacto" className="hero__btn hero__btn--secondary">{primaryCtaText}</a>
           </div>
         </div>
       </div>

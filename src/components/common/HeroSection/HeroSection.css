@@ -33,13 +33,7 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 var(--spacing-md); /* Menor padding en mobile para dar más espacio al texto */
-}
-
-@media (min-width: 768px) {
-  .hero__container {
-    padding: 0 var(--spacing-xl);
-  }
+  padding: 0 var(--spacing-xl); /* Volvemos al padding grande para dar más aire a los lados */
 }
 
 /* --- Content Column --- */
@@ -53,19 +47,29 @@
 
 .hero__title {
   font-family: var(--font-family-heading);
-  /* Ajuste extremo para pantallas muy pequeñas: mínimo 0.75rem y porcentaje menor */
-  font-size: clamp(0.75rem, 5.5vw, var(--font-size-5xl)); 
-  white-space: nowrap;
+  font-size: clamp(2.5rem, 8vw, var(--font-size-5xl)); /* Ya no hace falta que sea minúscula, porque ahora son 2 líneas */
+  white-space: normal; /* Permite el salto de línea en mobile */
   font-weight: var(--font-weight-bold);
   color: var(--color-text-inverse);
   margin-bottom: var(--spacing-md);
   line-height: 1.1;
-  max-width: 100%; /* Evita desbordamiento extra */
+  max-width: 100%;
 }
 
 @media (min-width: 768px) {
   .hero__title {
     font-size: clamp(2rem, 5.5vw, 4.5rem);
+    white-space: nowrap; /* En desktop vuelve a ser una sola línea */
+  }
+}
+
+.hero__mobile-break {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .hero__mobile-break {
+    display: none;
   }
 }
 
