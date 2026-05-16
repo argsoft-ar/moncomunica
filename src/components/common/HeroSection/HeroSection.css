@@ -33,7 +33,13 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 var(--spacing-xl);
+  padding: 0 var(--spacing-md); /* Menor padding en mobile para dar más espacio al texto */
+}
+
+@media (min-width: 768px) {
+  .hero__container {
+    padding: 0 var(--spacing-xl);
+  }
 }
 
 /* --- Content Column --- */
@@ -47,13 +53,14 @@
 
 .hero__title {
   font-family: var(--font-family-heading);
-  /* Hacemos la fuente fluida y forzamos a una línea */
-  font-size: clamp(1.6rem, 5vw, var(--font-size-5xl)); 
+  /* Ajuste extremo para pantallas muy pequeñas: mínimo 0.75rem y porcentaje menor */
+  font-size: clamp(0.75rem, 5.5vw, var(--font-size-5xl)); 
   white-space: nowrap;
   font-weight: var(--font-weight-bold);
   color: var(--color-text-inverse);
   margin-bottom: var(--spacing-md);
   line-height: 1.1;
+  max-width: 100%; /* Evita desbordamiento extra */
 }
 
 @media (min-width: 768px) {
@@ -75,6 +82,7 @@
   opacity: 0.9;
   margin-bottom: var(--spacing-xl);
   max-width: 600px;
+  line-height: 1.3; /* Reducido para que no tenga tanto espacio entre líneas */
 }
 
 /* --- Actions --- */
