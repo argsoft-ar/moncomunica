@@ -98,8 +98,7 @@ function App() {
         <HeroSection
           title={
             <>
-              Creamos marcas que <br />
-              <span className="hero__highlight">conectan</span>
+              Creamos marcas que <span className="hero__highlight">conectan</span>
             </>
           }
           description="Somos un estudio especializado en estrategia de marca, identidad visual y experiencias digitales que elevan el valor de tu negocio."

@@ -11,9 +11,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   className = '',
 }) => {
   return (
-    <section className={`hero ${className}`.trim()}>
+    <section 
+      className={`hero ${className}`.trim()}
+      style={{ backgroundImage: imageSrc ? `url(${imageSrc})` : 'none' }}
+    >
+      <div className="hero__overlay"></div>
       <div className="hero__container">
-        {/* Left Column: Content */}
         <div className="hero__content">
           <h1 className="hero__title">{title}</h1>
           <p className="hero__description">{description}</p>
@@ -21,17 +24,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <a href="#contacto" className="hero__btn hero__btn--primary">{primaryCtaText}</a>
             <a href="#portfolio" className="hero__btn hero__btn--secondary">{secondaryCtaText}</a>
           </div>
-        </div>
-
-        {/* Right Column: Visual */}
-        <div className="hero__visual">
-          {imageSrc && (
-            <img 
-              src={imageSrc} 
-              alt="Estudio visual" 
-              className="hero__image" 
-            />
-          )}
         </div>
       </div>
     </section>
