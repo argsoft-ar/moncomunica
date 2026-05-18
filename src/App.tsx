@@ -102,7 +102,7 @@ function App() {
               que <span className="hero__highlight">conectan</span>
             </>
           }
-          description="Somos un estudio especializado en estrategia de marca, identidad visual y experiencias digitales que elevan el valor de tu negocio."
+          description={"Somos un estudio especializado en estrategia de marca, identidad visual y\u00A0experiencias digitales que elevan el valor de tu negocio."}
           primaryCtaText="Contáctanos"
           secondaryCtaText="Ver portfolio"
           // TODO: Reemplaza la URL del placeholder con el ID de la foto de tu Hero en Cloudinary

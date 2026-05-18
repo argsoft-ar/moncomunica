@@ -52,7 +52,7 @@
   font-weight: var(--font-weight-bold);
   color: var(--color-text-inverse);
   margin-bottom: var(--spacing-md);
-  line-height: 1.1;
+  line-height: 1.0; /* Reducido para juntar las dos líneas en mobile */
   max-width: 100%;
 }
 
