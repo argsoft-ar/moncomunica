@@ -7,7 +7,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
   className = '' 
 }) => {
   return (
-    <section className={`portfolio ${className}`.trim()}>
+    <section className={`portfolio ${className}`.trim()} id="portfolio">
       <div className="portfolio__container">
         <header className="portfolio__header">
           <h2 className="portfolio__title">Nuestro Trabajo</h2>

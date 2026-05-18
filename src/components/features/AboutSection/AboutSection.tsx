@@ -10,7 +10,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
   className = ''
 }) => {
   return (
-    <section className={`about ${className}`.trim()} id="estudio">
+    <section className={`about ${className}`.trim()} id="nosotros">
       <div className="about__container">
         {/* Left Column: Text Content */}
         <div className="about__content">

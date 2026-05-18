@@ -84,7 +84,12 @@ const servicesData: Service[] = [
 // ==========================================
 const aboutData = {
   eyebrow: 'EL ESTUDIO',
-  title: 'Creamos marcas con alma',
+  title: (
+    <>
+      Creamos marcas <br />
+      con alma
+    </>
+  ),
   description: 'Nos especializamos en construir identidades visuales que conectan y perduran. Detrás de cada marca hay un equipo apasionado por el diseño, la estrategia y el impacto digital.',
   // TODO: Reemplaza la URL del placeholder con el ID de la foto de tu equipo en Cloudinary
   imageUrl: getCloudinaryUrl('https://res.cloudinary.com/dirc7jd9e/image/upload/v1777341043/MON_COMUNICACION_24_j1tkos.jpg')

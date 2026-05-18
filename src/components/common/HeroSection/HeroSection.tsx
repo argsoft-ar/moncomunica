@@ -13,6 +13,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section 
       className={`hero ${className}`.trim()}
+      id="inicio"
       style={{ backgroundImage: imageSrc ? `url(${imageSrc})` : 'none' }}
     >
       <div className="hero__overlay"></div>

@@ -36,7 +36,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
   className = '' 
 }) => {
   return (
-    <section className={`services ${className}`.trim()}>
+    <section className={`services ${className}`.trim()} id="servicios">
       <div className="services__container">
         <header className="services__header">
           <h2 className="services__title">Nuestros Servicios</h2>

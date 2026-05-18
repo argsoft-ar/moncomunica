@@ -17,7 +17,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
     }, 1500);
   };
   return (
-    <footer className={`footer ${className}`.trim()}>
+    <footer className={`footer ${className}`.trim()} id="contacto">
       <div className="footer__container">
 
         {/* Top Section: High-End Contact Form */}
