@@ -1,63 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Footer.css';
 import type { FooterProps } from './Footer.types';
 
 export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
-  const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormStatus('loading');
-    
-    // Simular un envío asíncrono
-    setTimeout(() => {
-      setFormStatus('success');
-      // Limpiar y volver a estado inicial después de un tiempo
-      setTimeout(() => setFormStatus('idle'), 3000);
-    }, 1500);
-  };
   return (
-    <footer className={`footer ${className}`.trim()} id="contacto">
+    <footer className={`footer ${className}`.trim()}>
       <div className="footer__container">
-
-        {/* Top Section: High-End Contact Form */}
-        <div className="footer__contact-grid">
-          {/* Left Column: Text */}
-          <div className="footer__contact-text">
-            <h2 className="footer__contact-title">Escríbenos</h2>
-            <p className="footer__contact-description">
-              Hablemos sobre tu marca, tus objetivos y cómo podemos trabajar juntos para llevarlos al siguiente nivel.
-            </p>
-          </div>
-
-          {/* Right Column: Form */}
-          <div className="footer__contact-form-wrapper">
-            <form className="footer__form" onSubmit={handleSubmit}>
-              <div className="footer__form-group">
-                <input type="text" className="footer__input" placeholder="Nombre completo" aria-label="Nombre completo" required />
-              </div>
-              <div className="footer__form-group">
-                <input type="text" className="footer__input" placeholder="Motivo de tu consulta" aria-label="Motivo de tu consulta" required />
-              </div>
-              <div className="footer__form-group">
-                <textarea className="footer__input footer__textarea" placeholder="Cuéntanos más sobre tu proyecto..." aria-label="Cuéntanos más sobre tu proyecto" required rows={3}></textarea>
-              </div>
-              <div className="footer__form-submit-wrapper">
-                <button 
-                  type="submit" 
-                  className={`footer__submit ${formStatus === 'success' ? 'footer__submit--success' : ''} ${formStatus === 'loading' ? 'footer__submit--loading' : ''}`.trim()}
-                  disabled={formStatus === 'loading' || formStatus === 'success'}
-                >
-                  {formStatus === 'loading' ? 'Enviando...' : formStatus === 'success' ? '¡Enviado!' : 'Enviar Mensaje'}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <hr className="footer__divider" />
-
-        {/* Middle Section: Info Grid */}
+        
+        {/* Main Section: Info Grid */}
         <div className="footer__grid">
           {/* Column 1: Brand */}
           <div className="footer__col footer__col--brand">
@@ -80,7 +30,9 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
                 <a href="mailto:hola@moncomunica.com" className="footer__link">hola@moncomunica.com</a>
               </li>
               <li className="footer__list-item">
-                <a href="tel:+5491112345678" className="footer__link">+54 9 11 1234 5678</a>
+                <a href="tel:+5491112345678" className="footer__link">
+                  +54 9 11 1234 5678
+                </a>
               </li>
             </ul>
           </div>

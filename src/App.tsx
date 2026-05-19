@@ -3,6 +3,7 @@ import { HeroSection } from './components/common/HeroSection/HeroSection'
 import { PortfolioSection } from './components/features/PortfolioSection/PortfolioSection'
 import { ServicesSection } from './components/features/ServicesSection/ServicesSection'
 import { AboutSection } from './components/features/AboutSection/AboutSection'
+import { ContactSection } from './components/features/ContactSection/ContactSection'
 import { Footer } from './components/common/Footer/Footer'
 import type { Project } from './components/features/PortfolioSection/PortfolioSection.types'
 import type { Service } from './components/features/ServicesSection/ServicesSection.types'
@@ -124,6 +125,8 @@ function App() {
           description={aboutData.description}
           imageUrl={aboutData.imageUrl}
         />
+
+        <ContactSection />
       </main>
 
       <Footer />

@@ -1,0 +1,188 @@
+/* ==========================================================================
+   ContactSection Component Styles (Pure CSS, BEM)
+   ========================================================================== */
+
+.contact {
+  background-color: var(--color-bg-primary); /* Fondo claro (crema) */
+  padding: var(--spacing-3xl) 0;
+  width: 100%;
+}
+
+.contact__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+@media (min-width: 992px) {
+  .contact__container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--spacing-3xl);
+  }
+}
+
+/* --- Text Column --- */
+.contact__text {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .contact__text {
+    width: 40%;
+    position: sticky;
+    top: 120px;
+  }
+}
+
+.contact__eyebrow {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.contact__title {
+  font-family: var(--font-family-heading);
+  font-size: clamp(2.5rem, 5vw, var(--font-size-4xl));
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-md) 0;
+  line-height: 1.1;
+}
+
+.contact__description {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Form Column --- */
+.contact__form-wrapper {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .contact__form-wrapper {
+    width: 60%;
+  }
+}
+
+.contact__form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .contact__form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.contact__form-group--full {
+  grid-column: 1 / -1;
+}
+
+.contact__label {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.contact__input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background-color: var(--color-bg-alt); /* Ligeramente distinto al crema para destacar */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius-lg); /* Bordes arquitectónicos 6px */
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-md);
+  color: var(--color-text-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.contact__input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.contact__input:focus {
+  outline: none;
+  border-color: var(--color-text-primary);
+  box-shadow: 0 0 0 1px var(--color-text-primary);
+}
+
+.contact__textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact__form-submit-wrapper {
+  grid-column: 1 / -1;
+  margin-top: var(--spacing-sm);
+}
+
+.contact__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: var(--color-text-primary);
+  color: var(--color-text-inverse);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: var(--border-radius-lg);
+  cursor: pointer;
+  transition: background-color var(--transition-normal), transform var(--transition-fast);
+}
+
+@media (min-width: 768px) {
+  .contact__submit {
+    width: auto;
+    min-width: 200px;
+  }
+}
+
+.contact__submit:hover:not(:disabled) {
+  background-color: var(--color-accent-primary);
+  transform: translateY(-2px);
+}
+
+.contact__submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.contact__submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.contact__submit--loading {
+  background-color: var(--color-text-secondary);
+}
+
+.contact__submit--success {
+  background-color: #2e7d32; /* Verde éxito */
+  color: white;
+}
