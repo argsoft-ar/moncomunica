@@ -5,6 +5,7 @@ import { ServicesSection } from './components/features/ServicesSection/ServicesS
 import { AboutSection } from './components/features/AboutSection/AboutSection'
 import { ContactSection } from './components/features/ContactSection/ContactSection'
 import { Footer } from './components/common/Footer/Footer'
+import { FloatingWhatsApp } from './components/common/FloatingWhatsApp/FloatingWhatsApp'
 import type { Project } from './components/features/PortfolioSection/PortfolioSection.types'
 import type { Service } from './components/features/ServicesSection/ServicesSection.types'
 import { getCloudinaryUrl } from './utils/cloudinary'
@@ -130,6 +131,7 @@ function App() {
       </main>
 
       <Footer />
+      <FloatingWhatsApp />
     </>
   )
 }

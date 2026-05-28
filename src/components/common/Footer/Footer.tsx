@@ -6,7 +6,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
   return (
     <footer className={`footer ${className}`.trim()}>
       <div className="footer__container">
-        
+
         {/* Main Section: Info Grid */}
         <div className="footer__grid">
           {/* Column 1: Brand */}
@@ -27,11 +27,11 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
             <h3 className="footer__col-title">Contacto</h3>
             <ul className="footer__list">
               <li className="footer__list-item">
-                <a href="mailto:hola@moncomunica.com" className="footer__link">hola@moncomunica.com</a>
+                <a href="mailto:moncomunica@gmail.com" className="footer__link">moncomunica@gmail.com</a>
               </li>
               <li className="footer__list-item">
-                <a href="tel:+5491112345678" className="footer__link">
-                  +54 9 11 1234 5678
+                <a href="tel:+5491167368908" className="footer__link">
+                  +54 9 11 6736 8908
                 </a>
               </li>
             </ul>
@@ -42,13 +42,10 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
             <h3 className="footer__col-title">Redes Sociales</h3>
             <ul className="footer__list">
               <li className="footer__list-item">
-                <a href="#instagram" className="footer__link">Instagram</a>
+                <a href="https://www.instagram.com/moncomunica/" className="footer__link">Instagram</a>
               </li>
               <li className="footer__list-item">
-                <a href="#behance" className="footer__link">Behance</a>
-              </li>
-              <li className="footer__list-item">
-                <a href="#linkedin" className="footer__link">LinkedIn</a>
+                <a href="https://www.behance.net/evaami206d1" className="footer__link">Behance</a>
               </li>
             </ul>
           </div>
