@@ -56,6 +56,9 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
           <p className="footer__copyright">
             &copy; {new Date().getFullYear()} Estudio Moncomunica. Todos los derechos reservados.
           </p>
+          <br/>
+          <p className="footer__copyright">Desarrollado por <a href="https://www.argsoft.ar/"
+              target="_blank"/> </p>
         </div>
       </div>
     </footer>
