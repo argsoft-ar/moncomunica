@@ -1,12 +1,11 @@
-import React from 'react';
-import './Footer.css';
-import type { FooterProps } from './Footer.types';
+import React from "react";
+import "./Footer.css";
+import type { FooterProps } from "./Footer.types";
 
-export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
+export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
   return (
     <footer className={`footer ${className}`.trim()}>
       <div className="footer__container">
-
         {/* Main Section: Info Grid */}
         <div className="footer__grid">
           {/* Column 1: Brand */}
@@ -27,7 +26,9 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
             <h3 className="footer__col-title">Contacto</h3>
             <ul className="footer__list">
               <li className="footer__list-item">
-                <a href="mailto:moncomunica@gmail.com" className="footer__link">moncomunica@gmail.com</a>
+                <a href="mailto:moncomunica@gmail.com" className="footer__link">
+                  moncomunica@gmail.com
+                </a>
               </li>
               <li className="footer__list-item">
                 <a href="tel:+5491167368908" className="footer__link">
@@ -42,10 +43,20 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
             <h3 className="footer__col-title">Redes Sociales</h3>
             <ul className="footer__list">
               <li className="footer__list-item">
-                <a href="https://www.instagram.com/moncomunica/" className="footer__link">Instagram</a>
+                <a
+                  href="https://www.instagram.com/moncomunica/"
+                  className="footer__link"
+                >
+                  Instagram
+                </a>
               </li>
               <li className="footer__list-item">
-                <a href="https://www.behance.net/evaami206d1" className="footer__link">Behance</a>
+                <a
+                  href="https://www.behance.net/evaami206d1"
+                  className="footer__link"
+                >
+                  Behance
+                </a>
               </li>
             </ul>
           </div>
@@ -54,12 +65,22 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
         {/* Bottom Section: Copyright */}
         <div className="footer__bottom">
           <p className="footer__copyright">
-            &copy; {new Date().getFullYear()} Estudio Moncomunica. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} Estudio Moncomunica. Todos los
+            derechos reservados.
           </p>
-          <br/>
-          <p className="footer__copyright">Desarrollado por <a href="https://www.argsoft.ar/"
-              target="_blank"/> </p>
+          <br />
         </div>
+        <p className="footer__copyright">
+          Desarrollado por{" "}
+          <a
+            href="https://www.argsoft.ar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__link"
+          >
+            Argsoft.ar
+          </a>
+        </p>
       </div>
     </footer>
   );
